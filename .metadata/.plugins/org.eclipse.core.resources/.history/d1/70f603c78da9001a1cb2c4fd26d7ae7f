@@ -1,0 +1,4 @@
+sending object to consumer
+
+curl -H "Content-Type: application/json" localhost:8080/c
+onsumerImpl -d '{"id":1,"name":"java"}'

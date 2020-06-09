@@ -1,0 +1,33 @@
+package com.ratna.cloud.function.funtions;
+
+import java.util.Date;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Supplier;
+
+import org.springframework.context.annotation.Configuration;
+
+import com.ratna.cloud.function.model.Book;
+
+@Configuration
+public class StartUpFunctions {
+
+	public Function<String, Integer> length() {
+		// input string output integer
+		Function<String, Integer> function = input -> input.length();
+		return function;
+	}
+
+	public Supplier<Book> getBook() {
+		Book book = new Book();
+		book.setId(1);
+		book.setName("Spring Cloud Function");
+		Supplier<Book> supplier = () -> book;
+
+		return supplier;
+	}
+
+	public Consumer<Date> getCurrentDate() {
+		return (input) -> System.out.println(input);
+	}
+}

@@ -1,0 +1,13 @@
+package com.ratna.cloud.function.funtions;
+
+import java.util.function.Function;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class StartUpFunctions {
+
+	public Function<String, String> reverse() {
+		return (input) -> new StringBuilder(input).reverse().toString();
+	}
+}

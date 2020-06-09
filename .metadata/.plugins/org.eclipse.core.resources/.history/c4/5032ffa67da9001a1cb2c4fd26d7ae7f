@@ -1,0 +1,5 @@
+package com.ratna.cloud.function.model;
+
+public class Book {
+
+}

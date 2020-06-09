@@ -1,0 +1,21 @@
+package com.ratna.cloud.function.funtions;
+
+import java.util.function.Function;
+import java.util.function.Supplier;
+
+import org.springframework.context.annotation.Configuration;
+
+import com.ratna.cloud.function.model.Book;
+
+@Configuration
+public class StartUpFunctions {
+
+	public Function<String, String> reverse() {
+		return (input) -> new StringBuilder(input).reverse().toString();
+	}
+
+	public Supplier<Book> getBook() {
+		Book book = new Book();
+		return () -> book;
+	}
+}
